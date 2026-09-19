@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ayoola Olaoye</title>
+    <meta name="description" content="Ayoola Olaoye — lawyer and engineer. Ethereum, protocol work, the EVM." />
+    <meta name="theme-color" content="#f6f1e8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:title" content="Ayoola Olaoye" />
+    <meta property="og:description" content="Ayoola Olaoye — lawyer and engineer. Ethereum, protocol work, the EVM." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ayoola-xet.github.io/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Serif:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          var d = t === "dark" || (t !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          if (d) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.style.colorScheme = "dark";
+            var m = document.querySelector('meta[name="theme-color"]');
+            if (m) m.setAttribute("content", "#141210");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Ayoola Olaoye</h1>
+          <p class="tagline">lawyer · engineer · ethereum</p>
+        </div>
+        <button type="button" id="theme" aria-label="Switch to dark mode" aria-pressed="false">dark</button>
+      </header>
+      <p class="bio">
+        Corporate lawyer and software engineer. I work on Ethereum — consensus, the EVM,
+        and the legal questions that sit next to them. Previously Ascendia Network.
+      </p>
+      <section>
+        <h2>writing</h2>
+        <ul>
+          <li>
+            <a class="row" href="https://hackmd.io/@ayoola/ryDFwqXzZe" rel="noreferrer" target="_blank">
+              <span class="title">Is Proof of Stake Actually a Consensus Protocol</span>
+              <span class="note">hackmd</span>
+            </a>
+          </li>
+          <li>
+            <a class="row" href="https://hackmd.io/@ayoola/rkTjorNfZl" rel="noreferrer" target="_blank">
+              <span class="title">Gasper: LMD GHOST and Casper FFG</span>
+              <span class="note">hackmd</span>
+            </a>
+          </li>
+          <li>
+            <a class="row" href="https://hackmd.io/@ayoola/SJ5jMdGrZg" rel="noreferrer" target="_blank">
+              <span class="title">Executable EVM Semantics</span>
+              <span class="note">hackmd</span>
+            </a>
+          </li>
+          <li>
+            <a class="row" href="https://0xola.hashnode.dev/optimizing-gas-fees-in-ethereum" rel="noreferrer" target="_blank">
+              <span class="title">Optimizing Gas Fees in Ethereum</span>
+              <span class="note">hashnode</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>work</h2>
+        <ul class="work">
+          <li>
+            <a class="row" href="https://github.com/Ayoola-xet/DCEPT" rel="noreferrer" target="_blank">
+              <span class="title">DCEPT</span>
+              <span class="note">differential testing for ethereum protocol upgrades</span>
+            </a>
+          </li>
+          <li>
+            <a class="row" href="https://github.com/Ayoola-xet/rust-evm-basic" rel="noreferrer" target="_blank">
+              <span class="title">rust-evm-basic</span>
+              <span class="note">a small evm in rust, for reading</span>
+            </a>
+          </li>
+          <li>
+            <a class="row" href="https://github.com/Ayoola-xet/gorf-locker-contract-zksolc" rel="noreferrer" target="_blank">
+              <span class="title">gorf locker</span>
+              <span class="note">zk-compatible lp locker</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>elsewhere</h2>
+        <ul class="links">
+          <li><a href="https://github.com/Ayoola-xet" rel="noreferrer" target="_blank">github</a></li>
+          <li><a href="https://x.com/ayoola_xet" rel="noreferrer" target="_blank">x</a></li>
+          <li><a href="https://www.linkedin.com/in/ayoolaolaoye" rel="noreferrer" target="_blank">linkedin</a></li>
+        </ul>
+      </section>
+    </main>
+    <script src="theme.js"></script>
+  </body>
+</html>
