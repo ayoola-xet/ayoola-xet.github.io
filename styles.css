@@ -140,7 +140,7 @@ a {
   color: var(--faint);
 }
 
-.row:hover .title {
+a.row:hover .title {
   color: var(--accent);
   text-decoration: underline;
 }
