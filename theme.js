@@ -31,3 +31,52 @@
     apply(theme);
   });
 })();
+
+(function () {
+  var lists = {
+    writing: document.getElementById("writing"),
+    work: document.getElementById("work"),
+  };
+  var tabs = {
+    writing: document.getElementById("tab-writing"),
+    work: document.getElementById("tab-work"),
+  };
+  var panel = document.getElementById("panel");
+
+  function show(name) {
+    lists.writing.hidden = name !== "writing";
+    lists.work.hidden = name !== "work";
+    tabs.writing.setAttribute("aria-selected", name === "writing" ? "true" : "false");
+    tabs.work.setAttribute("aria-selected", name === "work" ? "true" : "false");
+    tabs.writing.tabIndex = name === "writing" ? 0 : -1;
+    tabs.work.tabIndex = name === "work" ? 0 : -1;
+    panel.setAttribute("aria-labelledby", "tab-" + name);
+  }
+
+  function current() {
+    return location.hash === "#work" ? "work" : "writing";
+  }
+
+  tabs.writing.addEventListener("click", function () {
+    if (location.hash !== "#writing") history.pushState(null, "", "#writing");
+    show("writing");
+  });
+  tabs.work.addEventListener("click", function () {
+    if (location.hash !== "#work") history.pushState(null, "", "#work");
+    show("work");
+  });
+
+  document.querySelector(".switch").addEventListener("keydown", function (event) {
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+    event.preventDefault();
+    var next = current() === "writing" ? "work" : "writing";
+    history.pushState(null, "", "#" + next);
+    show(next);
+    tabs[next].focus();
+  });
+
+  window.addEventListener("hashchange", function () {
+    show(current());
+  });
+  show(current());
+})();

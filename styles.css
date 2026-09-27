@@ -93,6 +93,23 @@ h1 {
   text-wrap: pretty;
 }
 
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.switch button {
+  letter-spacing: 0.14em;
+}
+
+.switch button[aria-selected="true"] {
+  color: var(--fg);
+}
+
+.panel { margin-top: 0.4rem; }
+
 section { margin-top: 1.5rem; }
 
 h2 {
